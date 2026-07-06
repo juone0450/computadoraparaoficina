@@ -16,6 +16,63 @@
     <link rel="stylesheet" href="style.css">
     <!-- Phosphor Icons for modern iconography -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Structured Data / JSON-LD Schema.org for SEO & AI Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComputerStore",
+      "name": "decsatech",
+      "image": "https://raw.githubusercontent.com/juanmartinbarrientos/Mis-Redes/main/LandingPage/pc_a_medida.jpg",
+      "@id": "https://juanmartinbarrientos.github.io/LandingPage/#store",
+      "url": "https://juanmartinbarrientos.github.io/LandingPage/",
+      "telephone": "+5491123456789",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Buenos Aires, Argentina",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "description": "Empresa de informática y tecnología creada por entusiastas del hardware orientada a brindar soluciones de venta corporativa a empresas. Ofrecemos armado de PC a medida, PCs corporativas prearmadas, soporte de calidad con garantía escrita oficial en todos los componentes y facturación legal (Factura A y B).",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "ARS",
+        "lowPrice": "370000",
+        "offerCount": "10",
+        "category": "Computers & Electronics"
+      },
+      "additionalType": "https://schema.org/LocalBusiness",
+      "knowsAbout": ["Hardware de Computadoras", "Armado de PC", "Servicios Informáticos para Empresas", "Garantía Escrita", "Factura A y B"],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "PC Armada Oficina & Corporativa AM4",
+            "description": "PC equipada con socket AM4, SSD de 240GB, placa madre ASUS, gabinete kit completo con teclado y mouse. Ideal para empresas. Cuenta con garantía escrita de 12 meses y emisión de factura.",
+            "offers": {
+              "@type": "Offer",
+              "price": "370000",
+              "priceCurrency": "ARS",
+              "availability": "https://schema.org/InStock",
+              "warranty": {
+                "@type": "WarrantyPromise",
+                "durationOfWarranty": {
+                  "@type": "QuantitativeValue",
+                  "value": 12,
+                  "unitCode": "MON"
+                },
+                "description": "Garantía oficial directa por escrito."
+              }
+            }
+          }
+        }
+      ],
+      "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+      "currenciesAccepted": "ARS, USD"
+    }
+    </script>
 </head>
 <body>
     <div class="main-layout">
@@ -63,7 +120,7 @@
                         Nacimos de la pasión absoluta por la informática. Somos un equipo de profesionales y entusiastas del hardware que decidimos dar un paso adelante: abrir un **canal de venta especializado para empresas**.
                     </p>
                     <p>
-                        Entendemos que las empresas no solo necesitan computadoras; necesitan estabilidad, rendimiento optimizado y asesoramiento técnico honesto. No vendemos cajas cerradas, diseñamos soluciones de hardware eficientes para optimizar la productividad de tu negocio.
+                        Entendemos que las empresas no solo necesitan computadoras; necesitan estabilidad, rendimiento optimizado y asesoramiento técnico honesto. No vendemos solo cajas cerradas, diseñamos soluciones de hardware eficientes para optimizar la productividad de tu negocio.
                     </p>
                     <div class="features-grid">
                         <div class="feature-item">
@@ -84,12 +141,45 @@
                 </div>
             </section>
 
+            <!-- Countdown timer above the card, aligned to the left -->
+            <div class="countdown-above-container">
+                <div class="offer-countdown-box">
+                    <div class="countdown-header">
+                        <i class="ph-bold ph-clock"></i>
+                        <span>OFERTA LIMITADA</span>
+                    </div>
+                    <div class="countdown-timer">
+                        <div class="countdown-segment">
+                            <span class="countdown-num" id="cd-days">03</span>
+                            <span class="countdown-lbl">días</span>
+                        </div>
+                        <div class="countdown-dots">:</div>
+                        <div class="countdown-segment">
+                            <span class="countdown-num" id="cd-hours">00</span>
+                            <span class="countdown-lbl">horas</span>
+                        </div>
+                        <div class="countdown-dots">:</div>
+                        <div class="countdown-segment">
+                            <span class="countdown-num" id="cd-minutes">00</span>
+                            <span class="countdown-lbl">min</span>
+                        </div>
+                        <div class="countdown-dots">:</div>
+                        <div class="countdown-segment">
+                            <span class="countdown-num" id="cd-seconds">00</span>
+                            <span class="countdown-lbl">seg</span>
+                        </div>
+                    </div>
+                    <div class="countdown-footer" id="cd-footer">Quedan 3 días</div>
+                </div>
+            </div>
+
             <!-- SECCIÓN 2: OFERTA DESTACADA PC AM4 -->
             <section class="card special-offer-section">
                 <div class="offer-badge-wrapper">
                     <span class="badge required highlight-badge">¡Oferta Exclusiva Empresas!</span>
                 </div>
                 <div class="offer-container">
+                    
                     <div class="offer-details">
                         <h2>PC Armada Oficina & Corporativa AM4</h2>
                         <p class="offer-subtitle">Rendimiento garantizado para la productividad diaria de tu negocio.</p>
@@ -97,6 +187,7 @@
                         <ul class="offer-specs">
                             <li><i class="ph-bold ph-cpu"></i> <span><strong>Plataforma:</strong> AMD Socket AM4</span></li>
                             <li><i class="ph-bold ph-hard-drive"></i> <span><strong>Almacenamiento:</strong> SSD 240GB alta velocidad</span></li>
+                            <li><i class="ph-bold ph-cpu"></i> <span><strong>Memoria RAM:</strong> DDR4 8GB</span></li>
                             <li><i class="ph-bold ph-circuit-board"></i> <span><strong>Motherboard:</strong> ASUS de alta durabilidad</span></li>
                             <li><i class="ph-bold ph-desktop"></i> <span><strong>Gabinete:</strong> Gabinete Kit (incluye teclado, mouse y parlantes)</span></li>
                         </ul>

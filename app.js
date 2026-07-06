@@ -139,11 +139,73 @@ const btnDark = document.getElementById('btn-dark-theme');
 let selectedPlatform = null;
 let storageCounter = 0;
 
+function initCountdown() {
+    const COUNTDOWN_KEY = 'promo_target_time';
+    const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+    
+    let targetTime = localStorage.getItem(COUNTDOWN_KEY);
+    const now = Date.now();
+    
+    if (!targetTime) {
+        targetTime = now + THREE_DAYS_MS;
+        localStorage.setItem(COUNTDOWN_KEY, targetTime);
+    } else {
+        targetTime = parseInt(targetTime, 10);
+        if (isNaN(targetTime) || now >= targetTime) {
+            targetTime = now + THREE_DAYS_MS;
+            localStorage.setItem(COUNTDOWN_KEY, targetTime);
+        }
+    }
+    
+    const daysEl = document.getElementById('cd-days');
+    const hoursEl = document.getElementById('cd-hours');
+    const minutesEl = document.getElementById('cd-minutes');
+    const secondsEl = document.getElementById('cd-seconds');
+    const footerEl = document.getElementById('cd-footer');
+    
+    function updateCountdown() {
+        const currentTime = Date.now();
+        const timeLeft = targetTime - currentTime;
+        
+        if (timeLeft <= 0) {
+            if (daysEl) daysEl.textContent = '00';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minutesEl) minutesEl.textContent = '00';
+            if (secondsEl) secondsEl.textContent = '00';
+            if (footerEl) footerEl.textContent = '¡Promoción finalizada!';
+            clearInterval(timerInterval);
+            return;
+        }
+        
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+        
+        if (footerEl) {
+            if (days > 0) {
+                footerEl.textContent = `Finaliza en ${days} ${days === 1 ? 'día' : 'días'}`;
+            } else {
+                footerEl.textContent = 'Finaliza hoy';
+            }
+        }
+    }
+    
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown, 1000);
+}
+
 // Initialize
 async function init() {
     await loadExcelData();
     
     initTheme();
+    initCountdown();
     populateSelect(caseSelect, componentsData.case);
     populateSelect(psuSelect, componentsData.psu);
     populateSelect(gpuSelect, componentsData.gpu);
