@@ -129,11 +129,19 @@ const buyMultipleCheckbox = document.getElementById('buy-multiple');
 const whatsappInfo = document.getElementById('whatsapp-info');
 const priceLabel = document.querySelector('.price-label');
 const whatsappBtn = document.getElementById('whatsapp-btn');
+const whatsappSingleBtn = document.getElementById('whatsapp-single-btn');
 
 // Theme Elements
 const html = document.documentElement;
 const btnLight = document.getElementById('btn-light-theme');
 const btnDark = document.getElementById('btn-dark-theme');
+
+// Share Modal Elements
+const shareConfigBtn = document.getElementById('share-config-btn');
+const shareModal = document.getElementById('share-modal');
+const closeShareModalBtn = document.getElementById('close-share-modal');
+const shareWhatsappBtn = document.getElementById('share-whatsapp-btn');
+const shareEmailBtn = document.getElementById('share-email-btn');
 
 // State
 let selectedPlatform = null;
@@ -221,6 +229,9 @@ async function init() {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', handleWhatsAppClick);
     }
+    if (whatsappSingleBtn) {
+        whatsappSingleBtn.addEventListener('click', handleWhatsAppSingleClick);
+    }
     
     buyMultipleCheckbox.addEventListener('change', () => {
         if (buyMultipleCheckbox.checked) {
@@ -230,6 +241,19 @@ async function init() {
         }
         updatePrice();
     });
+    
+    // Share Modal Listeners
+    if (shareConfigBtn) shareConfigBtn.addEventListener('click', openShareModal);
+    if (closeShareModalBtn) closeShareModalBtn.addEventListener('click', closeShareModal);
+    if (shareWhatsappBtn) shareWhatsappBtn.addEventListener('click', shareViaWhatsApp);
+    if (shareEmailBtn) shareEmailBtn.addEventListener('click', shareViaEmail);
+    if (shareModal) {
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) {
+                closeShareModal();
+            }
+        });
+    }
     
     // Price update listeners
     document.querySelector('.configurator-main').addEventListener('change', updatePrice);
@@ -527,11 +551,51 @@ function handleWhatsAppClick() {
     window.open(waUrl, '_blank');
 }
 
+function handleWhatsAppSingleClick() {
+    const configText = generateConfigText(false);
+    const encodedText = encodeURIComponent(configText);
+    const waUrl = `https://wa.me/5491131184780?text=${encodedText}`;
+    window.open(waUrl, '_blank');
+}
+
 function showToast() {
     toast.classList.add('show');
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
+}
+
+// Share Modal Logic
+function openShareModal() {
+    if (shareModal) {
+        shareModal.style.display = 'flex';
+    }
+}
+
+function closeShareModal() {
+    if (shareModal) {
+        shareModal.style.display = 'none';
+    }
+}
+
+function shareViaWhatsApp() {
+    const isBulk = buyMultipleCheckbox && buyMultipleCheckbox.checked;
+    const configText = generateConfigText(isBulk);
+    const encodedText = encodeURIComponent(configText);
+    // General share URL for WhatsApp
+    const waUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
+    window.open(waUrl, '_blank');
+    closeShareModal();
+}
+
+function shareViaEmail() {
+    const isBulk = buyMultipleCheckbox && buyMultipleCheckbox.checked;
+    const configText = generateConfigText(isBulk);
+    const encodedSubject = encodeURIComponent("Mi Configuración de PC - decsatech");
+    const encodedBody = encodeURIComponent(configText);
+    const emailUrl = `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
+    window.location.href = emailUrl;
+    closeShareModal();
 }
 
 // Start

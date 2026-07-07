@@ -80,7 +80,7 @@
         <aside class="sidebar card">
             <div class="sidebar-logo">
                 <img src="LOGO_2.png" alt="decsatech" class="sidebar-logo-img">
-                <span>decsatech</span>
+                <a href="https://decsatech.com/" class="glitch-text" data-text="decsatech">decsatech</a>
             </div>
             <nav class="sidebar-nav">
                 <a href="pcs-amd.html" class="nav-item"><i class="ph-bold ph-cpu"></i> PCS AMD</a>
@@ -113,28 +113,42 @@
             <section class="card company-presentation-section">
                 <div class="presentation-header">
                     <span class="badge promo-badge">Quiénes Somos</span>
-                    <h2>Tecnología de Entusiastas para tu Empresa</h2>
+                    <h2><a href="https://decsatech.com/" class="glitch-text" data-text="Decsatech">Decsatech</a>, tecnología con experiencia real</h2>
                 </div>
                 <div class="presentation-body">
                     <p class="lead-text">
-                        Nacimos de la pasión absoluta por la informática. Somos un equipo de profesionales y entusiastas del hardware que decidimos dar un paso adelante: abrir un **canal de venta especializado para empresas**.
+                        <a href="https://decsatech.com/" class="glitch-text" data-text="Decsatech">Decsatech</a> nació de una pasión genuina por la tecnología. Con más de 15 años en el rubro, fuimos formándonos, capacitándonos y construyendo un conocimiento profundo del mercado — no solo de los productos, sino de lo que cada cliente realmente necesita.
                     </p>
                     <p>
-                        Entendemos que las empresas no solo necesitan computadoras; necesitan estabilidad, rendimiento optimizado y asesoramiento técnico honesto. No vendemos solo cajas cerradas, diseñamos soluciones de hardware eficientes para optimizar la productividad de tu negocio.
+                        No somos una empresa anónima. Somos una PYME que atiende de forma directa, sin intermediarios, con el criterio de alguien que conoce la tecnología de adentro. Entendemos que las empresas no solo necesitan computadoras; necesitan estabilidad, rendimiento optimizado y asesoramiento técnico honesto.
                     </p>
                     <div class="features-grid">
                         <div class="feature-item">
-                            <i class="ph-bold ph-shield-check"></i>
+                            <i class="ph-bold ph-medal"></i>
                             <div>
-                                <h3>Soporte Corporativo</h3>
-                                <p>Atención directa y soluciones inmediatas para tu empresa.</p>
+                                <h3>+15 años de experiencia</h3>
+                                <p>En el rubro informático, con formación continua y conocimiento real del mercado.</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="ph-bold ph-wrench"></i>
+                            <i class="ph-bold ph-lightbulb"></i>
                             <div>
-                                <h3>ADN 100% Técnico</h3>
-                                <p>Armado profesional por técnicos apasionados por el hardware.</p>
+                                <h3>Asesoramiento real</h3>
+                                <p>Te decimos qué conviene según tu caso, no según el margen. Sin vueltas.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-bold ph-headset"></i>
+                            <div>
+                                <h3>Atención directa</h3>
+                                <p>Hablás con quien sabe, no con un bot ni un intermediario.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-bold ph-users"></i>
+                            <div>
+                                <h3>+7.000 clientes</h3>
+                                <p>15 años de historial comercial, construido con confianza y resultados.</p>
                             </div>
                         </div>
                     </div>
@@ -197,7 +211,7 @@
                                 <span class="price-label">PRECIO ESPECIAL</span>
                                 <span class="price-amount">$370.000 <span class="currency">ARS</span></span>
                             </div>
-                            <a href="https://wa.me/5491123456789?text=Hola!%20Me%20interesa%20la%20oferta%20de%20la%20PC%20Armada%20AM4%20por%20$370.000%20para%20mi%20empresa." target="_blank" class="btn-whatsapp offer-btn">
+                            <a href="https://wa.me/5491131184780?text=Hola!%20Me%20interesa%20la%20oferta%20de%20la%20PC%20Armada%20AM4%20por%20$370.000%20para%20mi%20empresa." target="_blank" class="btn-whatsapp offer-btn">
                                 <i class="ph-bold ph-whatsapp-logo"></i> Consultar por esta Oferta
                             </a>
                         </div>
@@ -360,6 +374,11 @@
                 <div class="summary-content" id="summary-content">
                     <p class="empty-summary">Aún no has seleccionado componentes.</p>
                 </div>
+                <div style="margin-top: 16px;">
+                    <button id="whatsapp-single-btn" class="btn-whatsapp" style="width: 100%; justify-content: center;">
+                        <i class="ph-bold ph-whatsapp-logo"></i> Consultar por esta PC en WhatsApp
+                    </button>
+                </div>
             </section>
         </main>
     </div>
@@ -372,11 +391,34 @@
                 <span class="price-label">TOTAL IVA INCLUÍDO</span>
                 <span class="price-value" id="total-price">$ 0,00</span>
             </div>
-            <button id="copy-config-btn" class="btn-primary">
-                Copiar configuración
-            </button>
+            <div class="footer-buttons" style="display: flex; gap: 10px; width: 100%;">
+                <button id="share-config-btn" class="btn-secondary" style="flex: 1; padding: 16px; background-color: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;">
+                    <i class="ph-bold ph-share-network"></i> Compartir
+                </button>
+                <button id="copy-config-btn" class="btn-primary" style="flex: 2;">
+                    Copiar configuración
+                </button>
+            </div>
         </div>
     </footer>
+
+    <!-- Modal Compartir -->
+    <div id="share-modal" class="share-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <div class="share-modal-content card" style="width: 90%; max-width: 400px; margin: 0; position: relative;">
+            <div class="share-modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                <h3 style="font-size: 18px; font-weight: 700; margin: 0;">Compartir Configuración</h3>
+                <button id="close-share-modal" class="btn-remove" style="width: 32px; height: 32px;"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <div class="share-modal-body" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+                <button id="share-whatsapp-btn" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 14px; font-size: 15px;">
+                    <i class="ph-bold ph-whatsapp-logo"></i> Compartir por WhatsApp
+                </button>
+                <button id="share-email-btn" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px; background-color: var(--primary-color); color: white; display: flex; align-items: center; gap: 8px; font-size: 15px;">
+                    <i class="ph-bold ph-envelope-simple"></i> Compartir por Email
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast">Configuración copiada al portapapeles</div>
