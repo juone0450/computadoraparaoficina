@@ -152,6 +152,11 @@
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top: 24px; display: flex; justify-content: center;">
+                        <a href="https://decsatech.com/about/" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; padding: 12px 24px;">
+                            <i class="ph-bold ph-info"></i> Quiénes Somos
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -188,15 +193,17 @@
             </div>
 
             <!-- SECCIÓN 2: OFERTA DESTACADA PC AM4 -->
-            <section class="card special-offer-section">
+            <section class="card special-offer-section" itemscope itemtype="https://schema.org/Product">
+                <meta itemprop="category" content="Computadoras de Escritorio">
+                <meta itemprop="brand" content="Decsatech">
                 <div class="offer-badge-wrapper">
                     <span class="badge required highlight-badge">¡Oferta Exclusiva Empresas!</span>
                 </div>
                 <div class="offer-container">
                     
                     <div class="offer-details">
-                        <h2>PC Armada Oficina & Corporativa AM4</h2>
-                        <p class="offer-subtitle">Rendimiento garantizado para la productividad diaria de tu negocio.</p>
+                        <h2 itemprop="name">PC Armada Oficina & Corporativa AM4</h2>
+                        <p class="offer-subtitle" itemprop="description">Rendimiento garantizado para la productividad diaria de tu negocio. El mejor precio de pc armada del mercado.</p>
                         
                         <ul class="offer-specs">
                             <li><i class="ph-bold ph-cpu"></i> <span><strong>Plataforma:</strong> AMD Socket AM4</span></li>
@@ -206,12 +213,15 @@
                             <li><i class="ph-bold ph-desktop"></i> <span><strong>Gabinete:</strong> Gabinete Kit (incluye teclado, mouse y parlantes)</span></li>
                         </ul>
                         
-                        <div class="offer-price-section">
+                        <div class="offer-price-section" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="priceValidUntil" content="2027-12-31">
+                            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
                             <div class="price-info">
                                 <span class="price-label">PRECIO ESPECIAL</span>
-                                <span class="price-amount">$370.000 <span class="currency">ARS</span></span>
+                                <span class="price-amount">$<span itemprop="price" content="370000">370.000</span> <span class="currency" itemprop="priceCurrency" content="ARS">ARS</span></span>
                             </div>
-                            <a href="https://wa.me/5491131184780?text=Hola!%20Me%20interesa%20la%20oferta%20de%20la%20PC%20Armada%20AM4%20por%20$370.000%20para%20mi%20empresa." target="_blank" class="btn-whatsapp offer-btn">
+                            <a itemprop="url" href="https://wa.me/5491131184780?text=Hola!%20Me%20interesa%20la%20oferta%20de%20la%20PC%20Armada%20AM4%20por%20$370.000%20para%20mi%20empresa." target="_blank" class="btn-whatsapp offer-btn">
                                 <i class="ph-bold ph-whatsapp-logo"></i> Consultar por esta Oferta
                             </a>
                         </div>
@@ -381,6 +391,11 @@
                 </div>
             </section>
         </main>
+        
+        <!-- DEVELOPER CREDIT -->
+        <div class="developer-credit" style="text-align: center; padding: 20px 0; font-size: 13px; color: var(--text-secondary); margin-top: 20px;">
+            micrositio de <a href="https://www.decsatech.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">DECSATECH</a> desarrollado por <a href="https://www.juanmartinbarrientos.com" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">"JMB"</a>
+        </div>
     </div>
     </div>
 

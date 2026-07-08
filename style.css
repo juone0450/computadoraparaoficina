@@ -3,12 +3,12 @@
     --bg-color: #f3f4f6;
     --bg-overlay: rgba(243, 244, 246, 0.85);
     --card-bg: rgba(255, 255, 255, 0.90);
-    --text-primary: #111827;
+    --text-primary: #050505;
     --text-secondary: #6b7280;
     --border-color: #e5e7eb;
-    --primary-color: #3b82f6;
-    --primary-hover: #2563eb;
-    --accent-color: #f59e0b;
+    --primary-color: #ff6b00;
+    --primary-hover: #e65c00;
+    --accent-color: #ff8533;
     --danger-color: #ef4444;
     --danger-hover: #dc2626;
     
@@ -20,26 +20,26 @@
     --radius-lg: 12px;
     --radius-xl: 16px;
     
-    --footer-bg: #1f2937;
+    --footer-bg: #111111;
     --footer-text: #f9fafb;
 }
 
 [data-theme="dark"] {
     /* DARK THEME VARIABLES */
-    --bg-color: #111827;
-    --bg-overlay: rgba(17, 24, 39, 0.85);
-    --card-bg: rgba(31, 41, 55, 0.90);
+    --bg-color: #050505;
+    --bg-overlay: rgba(5, 5, 5, 0.85);
+    --card-bg: rgba(20, 20, 20, 0.90);
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
-    --border-color: #374151;
-    --primary-color: #60a5fa;
-    --primary-hover: #3b82f6;
+    --border-color: #333333;
+    --primary-color: #ff6b00;
+    --primary-hover: #ff6b00;
     
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
     
-    --footer-bg: #111827;
+    --footer-bg: #050505;
     --footer-text: #f9fafb;
 }
 
@@ -136,7 +136,7 @@ body {
 .theme-btn.active {
     border-color: var(--accent-color);
     color: var(--accent-color);
-    background-color: rgba(245, 158, 11, 0.1);
+    background-color: rgba(255, 133, 51, 0.1);
 }
 
 .theme-btn:hover:not(.active) {
@@ -195,14 +195,14 @@ body {
 .platform-btn:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
-    background-color: rgba(59, 130, 246, 0.05);
+    background-color: rgba(255, 107, 0, 0.05);
 }
 
 .platform-btn.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 6px rgba(255, 107, 0, 0.3);
     transform: translateY(-1px);
 }
 
@@ -260,7 +260,7 @@ body {
 .custom-select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
 }
 
 .custom-select:disabled {
@@ -336,7 +336,7 @@ body {
 .btn-dashed:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
-    background-color: rgba(59, 130, 246, 0.05);
+    background-color: rgba(255, 107, 0, 0.05);
 }
 
 /* STICKY FOOTER */
@@ -445,7 +445,7 @@ body {
 
 /* BULK DISCOUNT */
 .bulk-discount-wrapper {
-    background-color: rgba(59, 130, 246, 0.05);
+    background-color: rgba(255, 107, 0, 0.05);
     border: 1px dashed var(--primary-color);
     border-radius: var(--radius-md);
     padding: 16px;
@@ -454,7 +454,7 @@ body {
 }
 
 .bulk-discount-wrapper:hover {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(255, 107, 0, 0.1);
 }
 
 .bulk-discount-label {
@@ -723,18 +723,18 @@ body {
 
 /* Badges & General section tweaks */
 .promo-badge {
-    background-color: rgba(96, 165, 250, 0.15);
+    background-color: rgba(255, 107, 0, 0.15);
     color: var(--primary-color);
 }
 
 .primary-badge {
-    background-color: rgba(245, 158, 11, 0.15);
+    background-color: rgba(255, 133, 51, 0.15);
     color: var(--accent-color);
 }
 
 .highlight-badge {
-    background-color: rgba(16, 185, 129, 0.15);
-    color: #10b981;
+    background-color: rgba(255, 107, 0, 0.15);
+    color: #ff6b00;
     animation: pulse 2s infinite;
 }
 
@@ -754,7 +754,7 @@ body {
 /* Section 1: Company Presentation */
 .company-presentation-section {
     border-left: 4px solid var(--primary-color);
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(59, 130, 246, 0.03) 100%);
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 0, 0.03) 100%);
 }
 
 .presentation-header {
@@ -814,7 +814,7 @@ body {
 .feature-item:hover {
     transform: translateY(-2px);
     border-color: var(--primary-color);
-    background-color: rgba(59, 130, 246, 0.02);
+    background-color: rgba(255, 107, 0, 0.02);
 }
 
 .feature-item i {
@@ -839,8 +839,8 @@ body {
 
 /* Section 2: Special Offer */
 .special-offer-section {
-    border: 2px solid #10b981;
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border: 2px solid #ff6b00;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 0, 0.05) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -900,7 +900,7 @@ body {
 }
 
 .offer-specs li i {
-    color: #10b981;
+    color: #ff6b00;
     font-size: 18px;
     flex-shrink: 0;
 }
@@ -911,10 +911,10 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background-color: rgba(16, 185, 129, 0.08);
+    background-color: rgba(255, 107, 0, 0.08);
     padding: 16px 20px;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(255, 107, 0, 0.15);
 }
 
 .price-info {
@@ -925,7 +925,7 @@ body {
 .price-info .price-label {
     font-size: 11px;
     font-weight: 700;
-    color: #10b981;
+    color: #ff6b00;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -944,8 +944,8 @@ body {
 }
 
 .offer-btn {
-    background-color: #10b981;
-    border-color: #10b981;
+    background-color: #ff6b00;
+    border-color: #ff6b00;
     color: white !important;
     text-decoration: none;
     font-weight: 700;
@@ -959,15 +959,15 @@ body {
 }
 
 .offer-btn:hover {
-    background-color: #059669 !important;
-    border-color: #059669 !important;
+    background-color: #e65c00 !important;
+    border-color: #e65c00 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3);
 }
 
 .offer-icon-visual {
     font-size: 100px;
-    color: rgba(16, 185, 129, 0.1);
+    color: rgba(255, 107, 0, 0.1);
     display: none;
 }
 
@@ -987,27 +987,27 @@ body {
 
 .offer-countdown-box {
     background: var(--card-bg);
-    border: 2px solid #10b981;
+    border: 2px solid #ff6b00;
     border-radius: 30px; /* Rounded pill shape */
     padding: 8px 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.15);
     transition: all 0.3s ease;
 }
 
 .offer-countdown-box:hover {
-    border-color: #059669;
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+    border-color: #e65c00;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.25);
     transform: translateY(-2px);
 }
 
 .countdown-header {
     font-size: 10px;
     font-weight: 800;
-    color: #10b981;
+    color: #ff6b00;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -1046,7 +1046,7 @@ body {
 .countdown-dots {
     font-size: 13px;
     font-weight: 800;
-    color: #10b981;
+    color: #ff6b00;
     margin: 0 2px;
     animation: countdown-blink 1s infinite;
 }
@@ -1060,7 +1060,7 @@ body {
     font-size: 10px;
     color: var(--text-secondary);
     font-weight: 700;
-    border-left: 1px solid rgba(16, 185, 129, 0.3);
+    border-left: 1px solid rgba(255, 107, 0, 0.3);
     padding-left: 10px;
     white-space: nowrap;
 }
@@ -1128,4 +1128,34 @@ body {
     60% { clip-path: inset(70% 0 15% 0); }
     80% { clip-path: inset(50% 0 30% 0); }
     100% { clip-path: inset(5% 0 80% 0); }
+}
+
+/* ENHANCED BLACK AND ORANGE AESTHETICS */
+.nav-item.active {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+    border: 1px solid var(--primary-color);
+}
+.platform-btn.active {
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.5) !important;
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: #ffffff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 0.6) !important;
+    transform: translateY(-3px);
+}
+.card {
+    border: 1px solid rgba(255, 107, 0, 0.15);
+}
+.card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+}
+.glitch-text {
+    text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
 }
